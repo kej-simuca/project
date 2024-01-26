@@ -1,0 +1,319 @@
+html {
+  scroll-behavior: smooth;
+}
+body{
+    background-color: #e5eaf5;
+}
+#container {
+    filter: url(#threshold) blur(0.6px);
+}
+#text1,
+#text2 {
+    position: absolute;
+    margin:1px;
+    color:white;
+    font-weight: bold;
+    display: inline-block;
+    font-family: monospace;
+    font-size:45px;
+    margin-left:20px;
+    user-select: none;
+}
+.nav_right{
+    float:right;
+}
+nav{
+    width:100%;
+    height: 60px;
+    background-color: #494d5f;
+    font-size: 0;
+}
+nav a{
+    font-size: 27px;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #e5eaf5;
+    font-family: 'FashionVictim' !important;
+    transition: 0.3s all ease-in-out;
+    padding: 14px 20px;
+}
+nav a:hover{
+    transition: 0.3 all ease-in-out;
+    background-color: #52576e;
+    box-shadow: 2px 3px 4px 2px;
+}
+.navbar .icon {
+    display: none;
+}
+@media screen and (max-width: 750px) {
+    .navbar a:not(:first-child) {display: none;}
+    .navbar a.icon {
+        float: right;
+        display: block;
+  }
+}
+@media screen and (max-width: 750px) {
+    .navbar.responsive {position: relative;}
+    .navbar.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+  }
+  .navbar.responsive a {
+        float: none;
+        background-color: #494d5f;
+        display: block;
+  }
+}
+@media screen and (max-width: 600px) {
+    .navbar a:not(:first-child) {display: none;}
+    .navbar a.icon {
+        float:right;
+        display: block;
+  }
+}
+@media screen and (max-width: 600px) {
+    .navbar.responsive {position: relative;}
+    .navbar.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+  }
+  .navbar.responsive a a:hover {
+      float: none;
+      background-color: #494d5f;
+      display: block;
+  }
+}
+
+
+
+
+.scroll{
+    text-decoration: none;
+    position: relative;
+    top:-45px;
+    height:56px;
+    color: white;
+    background-color: #52576e;
+    text-align: center;
+    font-family: monospace;
+    font-size: 30px;
+    font-weight: bolder;
+}
+.scroll:hover{
+    color:#494d5f;
+    background-color: #e5eaf5;
+}
+
+.us{
+    display: flex;
+    justify-content: center;
+    align-content: space-between;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #494d5f;
+}
+.idk{
+    background-color: #e5eaf5;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 40px;
+    margin: 20px;
+    border-radius: 10%;
+}
+.idk:hover{
+    transform: scale(1.05);
+    box-shadow: 2px 3px 4px;
+}
+h3{
+    color: #494d5f;
+    font-size: 30px;
+    text-align: center
+}
+.idk2{
+    height: 300px;
+    width: 340px;
+}
+.idk3{
+    height: 300px;
+    width: 340px;
+}
+
+
+/*the code of company mission visson*/
+.flex-cont{
+    display: flex;
+    margin:30px;
+    justify-content:space-evenly;
+    align-items: center;
+}
+h1{
+    text-align: center;
+    font-family: monospace;
+    font-size: 40px;
+    color: #494d5f;
+}
+.miss{
+    font-size:50px;
+    font-family: monospace;
+    font-weight: bold;
+    color: #494d5f;
+    margin: 3px;
+}
+.miss:hover{
+     transform: scale(1.2);
+}
+.more:hover{
+    transform: scale(1.5);
+}
+.right_c{
+    width:50%;
+    float: right;
+    border: 10px solid #494d5f;
+}
+.right_c:hover{
+     transform: scale(1.1);
+}
+.lorem{
+    font-family: monospace;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 90deg;
+  inherits: true;
+}
+
+@property --gradX {
+  syntax: '<percentage>';
+  initial-value: 50%;
+  inherits: true;
+}
+
+@property --gradY {
+  syntax: '<percentage>';
+  initial-value: 0%;
+  inherits: true;
+}
+
+:root {
+	--d: 2500ms;
+	--angle: 90deg;
+	--gradX: 100%;
+	--gradY: 50%;
+	--c1: #e5eaf5;
+	--c2: #494d5f;
+}
+
+.right_c {
+	border: 10px solid;
+	padding: 10px;
+	border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 30;
+	animation: borderRotate var(--d) linear infinite forwards;
+}
+.right_c:nth-child(2) {
+	border-image: radial-gradient(ellipse at var(--gradX) var(--gradY), var(--c1), var(--c1) 10%, var(--c2) 40%) 30;
+	animation: borderRadial var(--d) linear infinite forwards;
+}
+@keyframes borderRotate {
+	100% {
+		--angle: 420deg;
+	}
+}
+@keyframes borderRadial {
+	20% {
+		--gradX: 100%;
+		--gradY: 100%;
+	}
+	40% {
+		--gradX: 100%;
+		--gradY: 100%;
+	}
+	60% {
+		--gradX: 100%;
+		--gradY: 100%;
+	}
+	80% {
+		--gradX: 0%;
+		--gradY: 50%;
+	}
+	100% {
+		--gradX: 50%;
+		--gradY: 0%;
+	}
+}
+
+
+.flex_4{
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    background-color: #494d5f;
+    padding:20px;
+}
+.btn{
+    width:150px;
+    height: 50px;
+    border-radius: 20%;
+    background-color: #e5eaf5;
+    font-family: monospace;
+    font-size: 30px;
+    border: none;
+}
+.btn:hover{
+    background-color: #e5eaf5;
+    box-shadow: 2px 3px 4px;
+}
+input{
+    width:340px;
+    height:50px;
+    margin:20px;
+    border-radius: 20%;
+    font-family: monospace;
+    font-size: 18px;
+    border-width:medium;
+    border-color: #52576e;
+}
+input:hover{
+    box-shadow: 2px 3px 4px 2px;
+}
+a{
+    text-decoration: none;
+    color: #52576e;
+}
+.sidihet{
+    color:#e5eaf5;
+    line-height:3;
+    font-family: monospace;
+}
+.hre{
+    color:#e5eaf5;
+    background-color: #494d8f;
+    padding: 15px;
+}
+
+.foo_2{
+    display:flex;
+    background-color: #494d5f;
+    margin-top:20px;
+    padding: 10px;
+}
+.hre_2{
+    width:40px;
+    height:40px;
+    border-radius: 50%;
+}
+pre{
+    color:#e5eaf5;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 18px;
+}
+.img_foot{
+    padding-left:530px
+}
